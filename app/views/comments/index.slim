@@ -1,0 +1,14 @@
+= link_to 'Home', root_path
+#game
+#content
+
+= content_for :javascripts do
+  javascript:
+    var Game = require('build/proto/game');
+    React.render(React.createElement(Game, {}), $('#game')[0]);
+
+    /*
+    var CommentBox = require('build/comments/comment_box').element;
+    React.render(CommentBox({url: 'comments.json', pollInterval: 2000}),
+                 $('#content')[0]);
+    */
