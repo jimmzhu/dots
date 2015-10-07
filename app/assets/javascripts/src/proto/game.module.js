@@ -1,6 +1,6 @@
 var Box = require('./box');
-var Component = require('./component');
-var ComponentPool = require('./component_pool');
+// var Component = require('./component');
+// var ComponentPool = require('./component_pool');
 var Grid = require('./grid');
 
 var Game = React.createClass({
@@ -8,18 +8,16 @@ var Game = React.createClass({
     return (
       <div className="game">
         <Box width="50%" height="94vh">
-          <Grid coordinates={this.state.coordinates} scaleX={0.9} />
+          <Grid coordinates={this.props.coordinates} scaleX={0.9} />
         </Box>
         <Box width="50%" height="47vh">
-          <ComponentPool>
-            <Component color="blue" shape="circle" />
-          </ComponentPool>
+          <Grid coordinates={this.props.coordinates} scaleX={0.9} />
         </Box>
       </div>
     );
   },
 
-  getInitialState() {
+  getDefaultProps() {
     return {
       coordinates: [
         [-6, 0],    [-6, 1],    [-6, 2],
